@@ -167,15 +167,3 @@ test_loss, test_acc = model.evaluate(fused_sequence_vec[K:], eval_stockfish[K:],
 print(test_acc)
 
 
-'''
-El modelo no pasa de una acuracy de más del 1%, la estructura de la NN se ha tomado de varios papers y trbajos que usan una estructura muy muy similar
-
-El problema probablemente este en los datos quizá haya un error en el código y esten desfasadas las listas de tableros y evalucion??
-SOL: Hacer una funcióin que englobe la creación de ambos data sets de forma simultaneo
-
-Ahora mismo los datos de "eval_stockfish" están siendo turncados entre el intervalo [-1,1], no creo que eso sea beneficioso para los datos de entrenamiento, pero esra una prueba más
-
-Se ha cambiado la vectorizxación de los tableros al estandar que usan otros proyectos similares con dimensiones 8x8x6, de esta forma se reduce el dispersamiento de los datos
- y técnicamente deberia de ser más fácil optimizar la NN
-
-'''
